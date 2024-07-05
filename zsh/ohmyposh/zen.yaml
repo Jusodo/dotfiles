@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version: 2
+final_space: true
+console_title_template: "{{ .Folder }}"
+blocks:
+
+- type: prompt
+  alignment: left
+  newline: true
+  segments:
+
+  - type: path
+    style: plain
+    background: transparent
+    # template: " \uea83 {{ path .Path .Location }} "
+    # template: :
+    properties:
+      style: full
+
+    # use posh-git integration 
+    # see $PROFILE
+  - type: git
+    style: plain
+    background: transparent
+    template: "{{ if .Env.POSH_GIT_STRING }} {{ .Env.POSH_GIT_STRING }} {{ end }}"
+
+- type: rprompt
+  overflow: hidden
+  newline: true
+  segments:
+
+  - type: executiontime
+    style: plain
+    background: transparent
+    properties:
+      always_enabled: true
+      threshold: 500
+      style: austin
+
+- type: prompt
+  alignment: left
+  newline: true
+  segments:
+    
+  - type: text
+    style: plain
+    background: transparent
+    template: "\u21E2"
+
+transient_prompt:
+  background: transparent
+  template: "\u21E2 "
+
+secondary_prompt:
+  background: transparent
+  template: "\u21E2\u21E2 "
+
+palette:
+  black: "#262B44"
+  blue: "#4B95E9"
+  green: "#59C9A5"
+  orange: "#F07623"
+  red: "#D81E5B"
+  white: "#E0DEF4"
+  yellow: "#F3AE35"
+
+
