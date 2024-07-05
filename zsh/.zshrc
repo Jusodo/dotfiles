@@ -16,4 +16,4 @@ path+=('/opt/nvim-linux64/bin/')
 export PATH
 
 
-eval "$(oh-my-posh init zsh --config ~/ohmyposh/zen.yaml)"
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/zen.yaml)"
