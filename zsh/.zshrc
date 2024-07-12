@@ -15,5 +15,8 @@ compinit
 path+=('/opt/nvim-linux64/bin/')
 export PATH
 
+source $HOME/.aliases
 
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/zen.yaml)"
+# eval "$(/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

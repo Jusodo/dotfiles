@@ -410,9 +410,6 @@ require('lazy').setup {
     end,
   },
 
-  -- connects jdtls with the language server
-  { 'mfussenegger/nvim-jdtls' },
-
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -420,6 +417,7 @@ require('lazy').setup {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
+      'nvim-java/nvim-java',
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -548,7 +546,6 @@ require('lazy').setup {
       local servers = {
         clangd = {},
         gopls = {},
-        jdtls = {},
         -- pyright = {},
         -- -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -614,6 +611,15 @@ require('lazy').setup {
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
+          end,
+          jdtls = function()
+            require('java').setup {
+              -- custom jdtls config
+            }
+
+            require('lspconfig').jdtls.setup {
+              -- Your custom nvim-java configuration goes here
+            }
           end,
         },
       }

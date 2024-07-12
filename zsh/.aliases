@@ -1,0 +1,27 @@
+# aliases
+
+alias k="kubectl"
+alias kccc="kubectl config current-context"
+alias kcgc="kubectl config get-contexts"
+alias kcutest="kubectl config use NKG-APPLICATION-CLOUD-TEST-AKS-admin"
+	alias kcuprod="kubectl config use NKG-APPLICATION-CLOUD-PROD-AKS-admin"
+
+alias bat="batcat"
+alias cat="batcat"
+
+
+#
+# azure environments
+#
+alias azdevtest="az account set --subscription 80b6b1f1-5a44-4f9c-aff2-e0e1083cbf1a && az account show"
+alias azdevprod="az account set --subscription b30c2f2c-6bbf-4963-9370-1ed8dcdceda3 && az account show"
+alias aznkg="az account set --subscription c7c14b8d-a34c-4de5-8cf8-cc858cea515f && az account show"
+
+
+#
+# on-premis environments
+#
+alias edwhsbox="ssh -i ~/workspace/edwh/edwh-dockerhost-configuration/keys/edwh-dev.private edwh-dev@sbox.edwh.ng.local"
+alias edwhtest="ssh -i ~/workspace/edwh/edwh-dockerhost-configuration/keys/edwh-dev.private edwh-dev@test.edwh.ng.local"
+alias mynkgtest="ssh root:Nitro2019$@192.168.2.180"
+

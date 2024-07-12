@@ -1,5 +1,20 @@
 # .dotfiles
 
+## Tools to Install
+
+´´´
+sudo apt install ripgrep
+sudo apt install git-detla
+sudo apt install fzf
+sudo apt install bat
+
+# azure cli
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+# linux brew
+https://docs.brew.sh/Homebrew-on-Linux
+´´´ 
+
 ## Preparing
 
 Clone the repository:
@@ -25,4 +40,7 @@ Link dotfiles
 stow -vvv -S zsh -t ~
 stow -vvv -S nvim -t ~
 stow -vvv -S git -t ~
+stow -vvv -S tmux -t ~
 ´´´
+
+
